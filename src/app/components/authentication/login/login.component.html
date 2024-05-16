@@ -1,0 +1,57 @@
+<!-- <div class="h-screen flex items-center justify-center bg-cover bg-no-repeat" style="background-image: url('assets/images/7231228.jpg'); background-size: cover; background-repeat: no-repeat;">
+  <div class="bg-black bg-opacity-60 backdrop-blur-lg px-12 py-16 rounded-md border max-w-md">
+    <h2 class="text-3xl text-center mb-5 font-semibold">Login</h2>
+    <form action="" [formGroup]="loginForm" >
+    <div class="flex items-center border-b mb-3">
+      <input type="email" placeholder="Email" class="py-2 outline-none bg-inherit w-64" formControlName="email"/>
+      <i class="ri-mail-line text-gray-400"></i>
+    </div>
+    <div class="flex items-center border-b mb-3">
+      <input type="password" placeholder="Password" class="py-2 outline-none bg-inherit w-64" formControlName="password"/>
+      <i class="ri-lock-line text-gray-400"></i>
+    </div>
+    <div class="flex items-center justify-between text-xs mb-6">
+      <div class="flex items-center gap-1">
+        <input type="checkbox" />
+        <p>Remember password</p>
+      </div>
+      <a href="#" class="text-blue-500">Forget password?</a>
+    </div>
+    <div class="bg-white hover:bg-gray-400 rounded-md text-black py-2 text-center mb-5 font-semibold">
+      <button type="button" (click)="submitLoginForm()"></button>
+      Login
+    </div>
+    <div class="text-sm text-center">
+      Don't have an account? <a href="#" class="text-blue-500">Register</a>
+    </div>
+  </form>
+  </div>
+</div> -->
+
+<div class="h-screen flex items-center justify-center bg-cover bg-no-repeat" style="background-image: url('assets/images/7231228.jpg'); background-size: cover; background-repeat: no-repeat;">
+  <div class="bg-black bg-opacity-60 backdrop-blur-lg px-12 py-16 rounded-md border max-w-md">
+    <h2 class="text-3xl text-center mb-5 font-semibold">Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="submitLoginForm()">
+      <div class="flex items-center border-b mb-3">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" name="email" ngModel required>
+        </mat-form-field>
+      </div>
+      <div class="flex items-center border-b mb-3">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" name="password" ngModel required>
+        </mat-form-field>
+      </div>
+      <div class="flex items-center justify-between text-xs mb-6">
+        <mat-checkbox>Remember password</mat-checkbox>
+        <a href="#" class="text-blue-500">Forget password?</a>
+      </div>
+      <button type="submit" mat-raised-button color="primary" class="w-full h-12 border-r-8 mb-5 bg-white">Connecter</button>
+    </form>
+    <div class="text-sm text-center">
+      Don't have an account? <a href="#" class="text-blue-500">Register</a>
+    </div>
+  </div>
+</div>
